@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ 
+#butonalanii{
+background-color: black;
+}
+ 
+#butonalani{
+background-color: black;
+}
+ 
+ 
+</style>
+<title>zaroyunu</title>
+</head>
+ 
+ 
+<body> 
+    
+ 
+<div id="butonalanii">
+<img src="zar.gif" id="1.alan">
+<img src="zar.gif" id="2.alan">
+<div id="2.oyuncu">1.oyuncu</div>
+<button  class="btn"  onclick="getir1()"> Zar At</button> </div>
+<div id="butonalani">
+    <img src="zar.gif" id="3.alan">
+    <img src="zar.gif" id="4.alan">
+    <div id="1.oyuncu">2.oyuncu</div>
+<button  class="btn"  onclick="getir2()"> Zar At</button> </div>
+ 
+ 
+<div id="sonucalani"> <br><br><br>
+    <div id="sonuc">  </div>
+    <button onclick="goster()"> sonucu göster </button>
+</div>
+ 
+<script>
+ 
+ 
+ 
+function getir1(){
+ 
+ 
+var rst=new Array();
+rst[0]="1.png";
+rst[1]="2.png";
+rst[2]="3.png";
+rst[3]="4.png";
+rst[4]="5.png";
+rst[5]="6.png";
+ 
+var r  =   Math.floor (Math.random()  * 6);
+var a   =    Math.floor(Math.random()  * 6);
+document.getElementById("1.alan").src=rst[r];
+document.getElementById("2.alan").src=rst[a];
+ 
+document.getElementById("1.alan").value=r;
+document.getElementById("2.alan").value=a;
+}
+ 
+function getir2(){
+ 
+ 
+var rst=new Array();
+rst[0]="1.png";
+rst[1]="2.png";
+rst[2]="3.png";
+rst[3]="4.png";
+rst[4]="5.png";
+rst[5]="6.png";
+ 
+var y  =   Math.floor (Math.random()  * 6);
+var b   =    Math.floor(Math.random()  * 6);
+document.getElementById("3.alan").src=rst[y];
+document.getElementById("4.alan").src=rst[b];
+ 
+document.getElementById("3.alan").value=y;
+document.getElementById("4.alan").value=b;
+ 
+ 
+ 
+}
+ 
+function goster(){
+var oyuncu11=document.getElementById("1.alan").value;
+var oyuncu12=document.getElementById("2.alan").value;
+var oyuncu21=document.getElementById("3.alan").value;
+var oyuncu22=document.getElementById("4.alan").value;
+ 
+var oyuncu1=oyuncu11+oyuncu12;
+var oyuncu2=oyuncu21+oyuncu22;
+ 
+ 
+if(oyuncu1>oyuncu2)
+{
+    document.getElementById("sonuc").innerHTML="1.oyuncu kazandı";
+}
+else if(oyuncu1==oyuncu2)
+{
+    document.getElementById("sonuc").innerHTML="esit";
+}
+else
+{
+    document.getElementById("sonuc").innerHTML="2.oyuncu kazandı";
+}
+}
+ 
+</script>
+</body>
+</html>
+
